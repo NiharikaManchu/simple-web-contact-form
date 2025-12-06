@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Submitted Information</title>
+    <title>Submitted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-box {
+            background: white;
+            padding: 30px;
+            width: 360px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info {
+            margin-bottom: 10px;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #6c5ce7;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background: #5a4bd6;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>Your Submitted Details</h2>
+<div class="result-box">
+    <h2>Form Submitted</h2>
 
-<?php
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $issue = $_POST['issue'];
-    $comments = $_POST['comments'];
-?>
+    <div class="info"><strong>Name:</strong> <?php echo $_POST['name']; ?></div>
+    <div class="info"><strong>Email:</strong> <?php echo $_POST['email']; ?></div>
+    <div class="info"><strong>Issue:</strong> <?php echo $_POST['issue']; ?></div>
+    <div class="info"><strong>Comment:</strong> <?php echo $_POST['comment']; ?></div>
 
-<p><strong>Name:</strong> <?php echo htmlspecialchars($name); ?></p>
-<p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
-<p><strong>Issue:</strong> <?php echo htmlspecialchars($issue); ?></p>
-<p><strong>Comments:</strong> <?php echo nl2br(htmlspecialchars($comments)); ?></p>
+    <a class="back-btn" href="index.php">Back</a>
+</div>
 
 </body>
 </html>
